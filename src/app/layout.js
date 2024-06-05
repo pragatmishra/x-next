@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import News from "@/components/News";
 import Sidebar from "@/components/Sidebar";
+import SessionWrapper from "@/components/SessionWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,6 +13,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
+    <SessionWrapper>
     <html lang="en">
       <body className={inter.className}>
         <div className="flex justify-between max-w-6xl mx-auto" >
@@ -33,5 +35,6 @@ export default function RootLayout({ children }) {
         
       </body>
     </html>
+    </SessionWrapper>
   );
 }
