@@ -50,8 +50,7 @@ export default function Input() {
     uploadTask.on(
       'state_changed',
       (snapshot) => {
-        const progress =
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        const progress =  (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         console.log('Upload is ' + progress + '% done');
       },
       (error) => {
@@ -64,6 +63,7 @@ export default function Input() {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           setImageFileUrl(downloadURL);
           setImageFileUploading(false);
+        console.log('File available at', downloadURL);
         });
       }
     );
