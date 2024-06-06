@@ -1,14 +1,27 @@
 'use client';
 import {React,useEffect,useState } from 'react'
-import { collection,deleteDoc, doc, getFirestore,  onSnapshot, serverTimestamp,setDoc, } from 'firebase/firestore';
-import { signIn,useSession } from 'next-auth/react';
-import { HiOutlineChat, HiOutlineHeart,HiOutlineTrash,HiHeart } from 'react-icons/hi';
-import { app } from '@/firebase';
-import { modalState,postIdState} from '@/atom/modalAtom';
-import { useRecoilState } from 'recoil';
-
-
-export default function Icons({ id, uid }) {
+import {
+    HiOutlineChat,
+    HiOutlineHeart,
+    HiOutlineTrash,
+    HiHeart,
+  } from 'react-icons/hi';
+  
+  import { signIn, useSession } from 'next-auth/react';
+  import {
+    collection,
+    deleteDoc,
+    doc,
+    getFirestore,
+    onSnapshot,
+    serverTimestamp,
+    setDoc,
+  } from 'firebase/firestore';
+  import { app } from '../firebase';
+  import { modalState, postIdState } from '../atom/modalAtom';
+  import { useRecoilState } from 'recoil';
+  
+  export default function Icons({ id, uid }) {
     const { data: session } = useSession();
     const [isLiked, setIsLiked] = useState(false);
     const [likes, setLikes] = useState([]); // [1

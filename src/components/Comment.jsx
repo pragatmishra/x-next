@@ -2,7 +2,15 @@
 
 import { HiDotsHorizontal, HiHeart, HiOutlineHeart } from 'react-icons/hi';
 import { useState, useEffect } from 'react';
-import { getFirestore, onSnapshot, collection, setDoc,doc, serverTimestamp, deleteDoc,} from 'firebase/firestore';
+import {
+  getFirestore,
+  onSnapshot,
+  collection,
+  setDoc,
+  doc,
+  serverTimestamp,
+  deleteDoc,
+} from 'firebase/firestore';
 import { app } from '../firebase';
 import { signIn, useSession } from 'next-auth/react';
 
