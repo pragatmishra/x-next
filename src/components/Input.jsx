@@ -24,7 +24,7 @@ import {
     const [text, setText] = useState(''); // [3
     const [postLoading, setPostLoading] = useState(false); // [4
     const imagePickRef = useRef(null);
-    const db = getFirestore(app);
+    const db = getFirestore(app );
     const addImageToPost = (e) => {
       const file = e.target.files[0];
       if (file) {
